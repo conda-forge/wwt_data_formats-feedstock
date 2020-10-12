@@ -5,11 +5,9 @@ Home: https://wwt-data-formats.readthedocs.io/
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/wwt_data_formats-feedstock/blob/master/LICENSE.txt)
 
 Summary: Low-level interface to AAS WorldWide Telescope data formats
-
-
 
 Current build status
 ====================
