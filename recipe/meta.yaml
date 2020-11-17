@@ -1,5 +1,5 @@
 {% set name = "wwt_data_formats" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wwt_data_formats-{{ version }}.tar.gz
-  sha256: c6cfc15af5259b442c4686ece2b0535a915ff13cad87fa134136d3f309a831f4
+  sha256: ab1c47652f664caa38fbd960f25072a1ac45ae0fbd13e7923cf5ff1c39b6fe37
 
 build:
   number: 0
