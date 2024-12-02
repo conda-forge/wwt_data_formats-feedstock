@@ -6,22 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wwt_data_formats-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wwt_data_formats-{{ version }}.tar.gz
   sha256: 242f5524baef77cce45288254ac69c7bcd04cfcce576daff76408efdff32f11f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - wwtdatatool=wwt_data_formats.cli:entrypoint
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.7
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - requests
     - traitlets
 
@@ -40,10 +41,11 @@ test:
     - pip
     - pytest
     - pytest-mock
+    - python {{ python_min }}
 
 about:
   home: https://wwt-data-formats.readthedocs.io/
-  summary: Low-level interface to AAS WorldWide Telescope data formats
+  summary: Low-level interface to WorldWide Telescope data formats
   license: MIT
   license_file: LICENSE
 
