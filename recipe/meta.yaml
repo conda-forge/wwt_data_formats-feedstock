@@ -14,12 +14,13 @@ build:
   noarch: python
   entry_points:
     - wwtdatatool=wwt_data_formats.cli:entrypoint
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - pip
     - python {{ python_min }}
+    - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - requests
@@ -44,7 +45,7 @@ test:
 
 about:
   home: https://wwt-data-formats.readthedocs.io/
-  summary: Low-level interface to AAS WorldWide Telescope data formats
+  summary: Low-level interface to WorldWide Telescope data formats
   license: MIT
   license_file: LICENSE
 
